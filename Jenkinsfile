@@ -19,7 +19,7 @@ pipeline{
            steps{
                dir('infra') {
                             sh 'echo "=================Terraform apply=================="'
-                            sh 'terraform apply'
+                            sh 'terraform apply  --auto-approve'
                         }
              
            }
