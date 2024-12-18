@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'jenkins-agent2'
-    }
+    agent any
 
     parameters {
             booleanParam(name: 'PLAN_TERRAFORM', defaultValue: false, description: 'Check to plan Terraform changes')
