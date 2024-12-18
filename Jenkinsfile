@@ -8,12 +8,20 @@ pipeline{
         }
         stage('Terraform Init'){
             steps{
-                sh 'terraform init'
+                dir('infra') {
+                            sh 'echo "=================Terraform Init=================="'
+                            sh 'terraform init'
+                        }
+               
             }
         }
         stage('Terraform Apply'){
            steps{
-                sh 'terraform apply --auto-approve'
+               dir('infra') {
+                            sh 'echo "=================Terraform apply=================="'
+                            sh 'terraform apply'
+                        }
+             
            }
         }
     }   
